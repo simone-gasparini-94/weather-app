@@ -1,11 +1,13 @@
 import "./styles/styles.css";
 import { bindSubmitForm } from "./events";
+import { 
+    fetchWeather,
+} from "./api";
 
 function main() {
-    let location = null;
-    bindSubmitForm((value) => {
-        location = value;
-        console.log(location);
+    bindSubmitForm(async (location) => {
+        const weatherData = await fetchWeather(location);
+        console.log(weatherData);
     });
 }
 
