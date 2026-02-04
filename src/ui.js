@@ -1,6 +1,7 @@
 import { dom } from "./dom";
 
 export function displayCurrentTemp(temp) {
+    if (!temp) return;
     dom.container.innerHTML = "";
     const p = document.createElement("p");
     p.classList.add("current-temperature");
