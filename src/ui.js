@@ -5,9 +5,9 @@ export function displayCurrentTemp(temp) {
     const p = document.createElement("p");
     p.classList.add("current-temperature");
     if (dom.toggle.classList.contains("c")) {
-        p.textContent = temp.c + '°C';
+        p.textContent = `Current Temperature: ${temp.c}°C`;
     } else if (dom.toggle.classList.contains("f")) {
-        p.textContent = temp.f + '°F';
+        p.textContent = `Current Temperature: ${temp.f}°C`;
     }
     dom.container.appendChild(p);
 }
