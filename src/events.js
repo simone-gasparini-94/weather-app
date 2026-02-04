@@ -6,3 +6,16 @@ export function bindSubmitForm(callback) {
         callback(dom.form.elements.location.value);
     });
 }
+
+export function bindToggleUnit(callback) {
+    dom.toggle.addEventListener("click", () => {
+        dom.toggle.classList.toggle("c");
+        dom.toggle.classList.toggle("f");
+        if (dom.toggle.classList.contains("c")) {
+            dom.toggle.textContent = "°C";
+        } else if (dom.toggle.classList.contains("f")) {
+            dom.toggle.textContent = "°F";
+        }
+        callback();
+    });
+}
