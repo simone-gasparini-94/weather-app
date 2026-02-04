@@ -4,7 +4,11 @@ export function displayCurrentTemp(temp) {
     dom.container.innerHTML = "";
     const p = document.createElement("p");
     p.classList.add("current-temperature");
-    p.textContent = temp + '°C';
+    if (dom.toggle.classList.contains("c")) {
+        p.textContent = temp.c + '°C';
+    } else if (dom.toggle.classList.contains("f")) {
+        p.textContent = temp.f + '°F';
+    }
     dom.container.appendChild(p);
 }
 

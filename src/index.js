@@ -9,7 +9,8 @@ function main() {
         try {
             const weatherData = await fetchWeather(location);
             const currentTemp = getCurrentTemp(weatherData);
-            displayCurrentTemp(currentTemp.c);
+            console.log(currentTemp);
+            displayCurrentTemp(currentTemp);
         } catch(err) {
             displayError();
         }
