@@ -1,7 +1,8 @@
+import { dom } from "./dom";
+
 export function bindSubmitForm(callback) {
-    const form = document.querySelector("#location-form");
-    form.addEventListener("submit", (e) => {
+    dom.form.addEventListener("submit", (e) => {
         e.preventDefault();
-        callback(form.elements.location.value);
+        callback(dom.form.elements.location.value);
     });
 }

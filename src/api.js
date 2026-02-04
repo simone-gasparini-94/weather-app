@@ -5,5 +5,6 @@ export async function fetchWeather(location) {
     const http = await fetch(url);
     if (!http.ok) throw new Error(`HTTP status ${http.status}`);
     const data = await http.json();
+    console.log(data);
     return data;
 }
