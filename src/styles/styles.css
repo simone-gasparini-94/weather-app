@@ -2,6 +2,15 @@
     box-sizing: border-box;
 }
 
+.hidden {
+    display: none;
+}
+
 #location-form {
     margin-bottom: 8px;
+}
+
+.day-container {
+    display: flex;
+    gap: 8px;
 }

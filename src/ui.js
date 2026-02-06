@@ -1,53 +1,45 @@
 import { dom } from "./dom";
 import { toCelsius } from "./utils";
+import { addDays, format } from "date-fns";
 
 function displayDay(index) {
     if (index < 0 || index > 14) {
         console.error("Invalid index");
         return;
     }
-    const p = document.createElement("p");
-    p.classList.add("day");
-    if (index === 0) {
-        p.textContent = 'Today';
-    } else {
-        p.textContent = index;
-    }
-    dom.container.appendChild(p);
+    const p = dom.container.querySelector(".day");
+    const day = addDays(new Date(), 0);
+    p.textContent = format(day, 'dd MMMM yyyy');
 }
 
 function displayCondition(condition) {
     if (!condition) return;
-    const p = document.createElement("p");
+    const p = dom.container.querySelector(".condition")
     p.classList.add("current-conditon");
     p.textContent = `${condition}`;
-    dom.container.appendChild(p);
 }
 
 function displayTemp(temp) {
     if (!temp) return;
-    const p = document.createElement("p");
-    p.classList.add("current-temperature");
+    const p = dom.container.querySelector(".temperature")
     if (dom.toggle.classList.contains("c")) {
         p.textContent = `${temp}°F`;
     } else if (dom.toggle.classList.contains("f")) {
         p.textContent = `${toCelsius(temp)}°C`;
     }
-    dom.container.appendChild(p);
 }
 
 export function display(data, day) {
-    dom.container.innerHTML = "";
+    dom.error.classList.add("hidden");
+    dom.container.classList.remove("hidden");
     displayDay(day);
-    displayCondition(data.description);
+    displayCondition(data.conditions);
     displayTemp(data.temp);
 }
 
 
 export function displayError() {
-    dom.container.innerHTML = "";
-    const p = document.createElement("p");
-    p.classList.add("error");
+    dom.container.classList.add("hidden");
+    dom.error.classList.remove("hidden");
     p.textContent = "Location not found";
-    dom.container.appendChild(p);
 }

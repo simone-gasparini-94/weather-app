@@ -10,7 +10,16 @@
         <input type="text" name="location" id="location" placeholder="Choose a location" required>
         <button type="submit">Get Weather</button>
     </form>
-    <button class="f" id="toggle-unit">°F</button>
-    <div class="data-container"></div>
+    <button class="f hidden" id="toggle-unit">°F</button>
+    <div class="data-container hidden">
+        <div class="day-container">
+            <button id="prev"><</button>
+            <p class="day"></p>
+            <button id="next">></button>
+        </div>
+        <p class="condition"></p>
+        <p class="temperature"></p>
+    </div>
+    <p class="error hidden"></p>
 </body>
 </html>
