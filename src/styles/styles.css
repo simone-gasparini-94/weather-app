@@ -14,3 +14,78 @@
     display: flex;
     gap: 8px;
 }
+
+.temperature-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.temperature {
+    margin: 0px;
+}
+
+#temperature-color {
+    width: 16px;
+    height: 16px;
+}
+
+#temperature-color.t14 {
+    background-color: hsl(224, 34%, 31%);
+}
+
+#temperature-color.t13 {
+    background-color: hsl(215, 55%, 48%);
+}
+
+#temperature-color.t12 {
+    background-color: hsl(209, 71%, 55%);
+}
+
+#temperature-color.t11 {
+    background-color: hsl(203, 75%, 68%);
+}
+
+#temperature-color.t10 {
+    background-color: hsl(205, 46%, 90%);
+}
+
+#temperature-color.t9 {
+    background-color: hsl(90, 39%, 83%);
+}
+
+#temperature-color.t8 {
+    background-color: hsl(160, 43%, 69%);
+}
+
+#temperature-color.t7 {
+    background-color: hsl(185, 60%, 40%);
+}
+
+#temperature-color.t6 {
+    background-color: hsl(83, 59%, 43%);
+}
+
+#temperature-color.t5 {
+    background-color: hsl(51, 89%, 50%);
+}
+
+#temperature-color.t4 {
+    background-color: hsl(29, 83%, 58%);
+}
+
+#temperature-color.t3 {
+    background-color: hsl(4, 66%, 56%);
+}
+
+#temperature-color.t2 {
+    background-color: hsl(358, 51%, 46%);
+}
+
+#temperature-color.t1 {
+    background-color: hsl(350, 59%, 52%);
+}
+
+#temperature-color.t0 {
+    background-color: hsl(335, 61%, 54%);
+}

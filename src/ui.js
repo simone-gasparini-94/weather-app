@@ -1,3 +1,4 @@
+import { getColorClass } from "./color-temp";
 import { dom } from "./dom";
 import { toCelsius } from "./utils";
 import { addDays, format } from "date-fns";
@@ -15,13 +16,16 @@ function displayDay(index) {
 function displayCondition(condition) {
     if (!condition) return;
     const p = dom.container.querySelector(".condition")
-    p.classList.add("current-conditon");
     p.textContent = `${condition}`;
 }
 
 function displayTemp(temp) {
     if (!temp) return;
-    const p = dom.container.querySelector(".temperature")
+    const div = dom.container.querySelector("#temperature-color");
+    div.removeAttribute("class");
+    const cls = getColorClass(temp);
+    div.classList.add(cls);
+    const p = dom.container.querySelector(".temperature");
     if (dom.toggle.classList.contains("c")) {
         p.textContent = `${temp}°F`;
     } else if (dom.toggle.classList.contains("f")) {
