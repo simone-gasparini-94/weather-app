@@ -1,30 +1,48 @@
 import { dom } from "./dom";
+import { toCelsius } from "./utils";
 
-function displayCurrentCondition(condition) {
-    if (!condition) return;
+function displayDay(index) {
+    if (index < 0 || index > 14) {
+        console.error("Invalid index");
+        return;
+    }
     const p = document.createElement("p");
-    p.classList.add("current-conditon");
-    p.textContent = `Current Condition: ${condition}`;
-    dom.container.appendChild(p);
-}
-
-function displayCurrentTemp(temp) {
-    if (!temp) return;
-    const p = document.createElement("p");
-    p.classList.add("current-temperature");
-    if (dom.toggle.classList.contains("c")) {
-        p.textContent = `Current Temperature: ${temp.f}°F`;
-    } else if (dom.toggle.classList.contains("f")) {
-        p.textContent = `Current Temperature: ${temp.c}°C`;
+    p.classList.add("day");
+    if (index === 0) {
+        p.textContent = 'Today';
+    } else {
+        p.textContent = index;
     }
     dom.container.appendChild(p);
 }
 
-export function displayCurrentWeather(current) {
-    dom.container.innerHTML = "";
-    displayCurrentCondition(current.condition);
-    displayCurrentTemp(current.temp);
+function displayCondition(condition) {
+    if (!condition) return;
+    const p = document.createElement("p");
+    p.classList.add("current-conditon");
+    p.textContent = `${condition}`;
+    dom.container.appendChild(p);
 }
+
+function displayTemp(temp) {
+    if (!temp) return;
+    const p = document.createElement("p");
+    p.classList.add("current-temperature");
+    if (dom.toggle.classList.contains("c")) {
+        p.textContent = `${temp}°F`;
+    } else if (dom.toggle.classList.contains("f")) {
+        p.textContent = `${toCelsius(temp)}°C`;
+    }
+    dom.container.appendChild(p);
+}
+
+export function display(data, day) {
+    dom.container.innerHTML = "";
+    displayDay(day);
+    displayCondition(data.description);
+    displayTemp(data.temp);
+}
+
 
 export function displayError() {
     dom.container.innerHTML = "";
