@@ -1,22 +1,23 @@
 import "./styles/styles.css";
-import { getCurrentTemp } from "./temp";
+import { getCurrentWeather } from "./current";
 import { bindSubmitForm, bindToggleUnit } from "./events";
 import { fetchWeather } from "./api";
-import { displayCurrentTemp, displayError } from "./ui";
+import { displayCurrentWeather, displayError } from "./ui";
 
 function main() {
     const weatherData = {};
+    let dataAPI;
     bindSubmitForm(async (location) => {
         try {
-            const data = await fetchWeather(location);
-            weatherData.currentTemp = getCurrentTemp(data);
-            displayCurrentTemp(weatherData.currentTemp);
+            dataAPI = await fetchWeather(location);
+            weatherData.current = getCurrentWeather(dataAPI);
+            displayCurrentWeather(weatherData.current);
         } catch(err) {
             displayError();
         }
     });
     bindToggleUnit(() => {
-        displayCurrentTemp(weatherData.currentTemp);
+        displayCurrentWeather(weatherData.current);
     })
 }
 

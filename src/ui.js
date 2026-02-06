@@ -1,8 +1,15 @@
 import { dom } from "./dom";
 
-export function displayCurrentTemp(temp) {
+function displayCurrentCondition(condition) {
+    if (!condition) return;
+    const p = document.createElement("p");
+    p.classList.add("current-conditon");
+    p.textContent = `Current Condition: ${condition}`;
+    dom.container.appendChild(p);
+}
+
+function displayCurrentTemp(temp) {
     if (!temp) return;
-    dom.container.innerHTML = "";
     const p = document.createElement("p");
     p.classList.add("current-temperature");
     if (dom.toggle.classList.contains("c")) {
@@ -11,6 +18,12 @@ export function displayCurrentTemp(temp) {
         p.textContent = `Current Temperature: ${temp.c}°C`;
     }
     dom.container.appendChild(p);
+}
+
+export function displayCurrentWeather(current) {
+    dom.container.innerHTML = "";
+    displayCurrentCondition(current.condition);
+    displayCurrentTemp(current.temp);
 }
 
 export function displayError() {
