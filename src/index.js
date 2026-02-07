@@ -1,6 +1,11 @@
 import "./styles/styles.css";
 import { getWeatherData } from "./weather";
-import { bindSubmitForm, bindToggleUnit } from "./events";
+import { 
+    bindSubmitForm,
+    bindToggleUnit,
+    bindChangeToPrev,
+    bindChangeToNext
+} from "./events";
 import { fetchWeather } from "./api";
 import { display, displayError } from "./ui";
 
@@ -14,11 +19,19 @@ function main() {
             weatherData = getWeatherData(dataAPI);
             console.log(weatherData);
             display(weatherData[day], day);
-        } catch(err) {
+        } catch (err) {
             displayError();
         }
     });
     bindToggleUnit(() => {
+        display(weatherData[day], day);
+    });
+    bindChangeToPrev(() => {
+        if (day > 0) day--;
+        display(weatherData[day], day);
+    });
+    bindChangeToNext(() => {
+        if (day < 15) day++;
         display(weatherData[day], day);
     })
 }

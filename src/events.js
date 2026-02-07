@@ -19,3 +19,15 @@ export function bindToggleUnit(callback) {
         callback();
     });
 }
+
+export function bindChangeToPrev(callback) {
+    dom.prev.addEventListener("click" , () => {
+        callback();
+    });
+}
+
+export function bindChangeToNext(callback) {
+    dom.next.addEventListener("click", () => {
+        callback();
+    });
+}
