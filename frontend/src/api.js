@@ -1,5 +1,5 @@
 export async function fetchWeather(location) {
-    const key = 'FWSRJVGF9QVFUKKEAX5AFXTKA';
+    const key = process.env.KEY;
     const url = 
     `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=${key}`;
     const http = await fetch(url);
