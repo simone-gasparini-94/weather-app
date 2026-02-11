@@ -1,6 +1,8 @@
 *This project is part of [The Odin Project](https://www.theodinproject.com/lessons/node-path-javascript-weather-app) Curriculum.*
 
-#### WORK IN PROGRESS
+# Weather App
+
+*WORK IN PROGRESS*
 
 ![Screenshot](./assets/screenshot.png)
 
