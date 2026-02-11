@@ -6,7 +6,7 @@
 
 ## Description
 
-Web app that uses [Virtual Crossing Weather API](https://www.visualcrossing.com/weather-api/) to get the weather forecast of a specific location.
+Web app that uses [Virtual Crossing Weather API](https://www.visualcrossing.com/weather-api/) to fetch the weather forecast of a specific location.
 
 The app uses a backend server that hides the API key and acts as proxy, forwarding the HTTP request from the frontend to the public API and returning the results.
 
