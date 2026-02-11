@@ -1,10 +1,8 @@
 export async function fetchWeather(location) {
-    const key = process.env.KEY;
     const url = 
-    `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=${key}`;
+    `http://localhost:4000/${location}`;
     const http = await fetch(url);
     if (!http.ok) throw new Error(`HTTP status ${http.status}`);
     const data = await http.json();
-    console.log(data);
     return data;
 }
