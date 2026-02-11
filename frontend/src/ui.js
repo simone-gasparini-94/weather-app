@@ -43,6 +43,12 @@ export function display(data, day) {
     displayTemp(data.temp);
 }
 
+export function displayLocation(location) {
+    let formatted = location[0].toUpperCase()
+        + location.slice(1).toLowerCase();
+    dom.header.textContent = formatted;
+}
+
 
 export function displayError() {
     dom.container.classList.add("hidden");

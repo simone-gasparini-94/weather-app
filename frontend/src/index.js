@@ -7,7 +7,7 @@ import {
     bindChangeToNext
 } from "./events";
 import { fetchWeather } from "./api";
-import { display, displayError } from "./ui";
+import { display, displayError, displayLocation } from "./ui";
 
 function main() {
     let weatherData;
@@ -18,6 +18,7 @@ function main() {
             dataAPI = await fetchWeather(location);
             weatherData = getWeatherData(dataAPI);
             console.log(weatherData);
+            displayLocation(location);
             display(weatherData[day], day);
         } catch (err) {
             displayError();

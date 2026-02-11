@@ -6,24 +6,27 @@
     <title>Document</title>
 </head>
 <body>
-    <form id="location-form">
-        <input type="text" name="location" id="location" placeholder="Choose a location" required>
-        <button type="submit">Get Weather</button>
-    </form>
-    <button class="f hidden" id="toggle-unit">°F</button>
-    <div class="data-container hidden">
-        <div class="day-container">
-            <button id="prev"><</button>
-            <p class="day"></p>
-            <button id="next">></button>
+    <div class="container">
+        <h1>Get Weather</h1>
+        <form id="location-form">
+            <input type="text" name="location" id="location" placeholder="Choose a location" required>
+            <button type="submit">Get Weather</button>
+        </form>
+        <button class="f hidden" id="toggle-unit">°F</button>
+        <div class="data-container hidden">
+            <div class="day-container">
+                <button id="prev"><</button>
+                <p class="day"></p>
+                <button id="next">></button>
+            </div>
+            <h3 class="location-header"></h3>
+            <p class="condition"></p>
+            <div class="temperature-container">
+                <div id="temperature-color"></div>
+                <p class="temperature"></p>
+            </div>
         </div>
-        <p class="condition"></p>
-        <div class="temperature-container">
-            <div id="temperature-color"></div>
-            <p class="temperature"></p>
-        </div>
-       
+        <p class="error hidden"></p>
     </div>
-    <p class="error hidden"></p>
 </body>
 </html>

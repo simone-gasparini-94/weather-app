@@ -4,5 +4,6 @@ export const dom = {
     error: document.querySelector(".error"),
     toggle: document.querySelector("#toggle-unit"),
     prev: document.querySelector("#prev"),
-    next: document.querySelector("#next")
+    next: document.querySelector("#next"),
+    header: document.querySelector(".location-header")
 }
