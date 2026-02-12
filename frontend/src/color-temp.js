@@ -1,15 +1,18 @@
+import { toCelsius } from "./utils";
+
 export function getColorClass(temp) {
-    const t = Number(temp);
+    let t = Number(temp);
     if (Number.isNaN(t) || t < 0) {
         console.log("Invalid temperature");
-        return 't14';
+        return 't20';
     }
+    t = toCelsius(t);
     const temps = 
-    [90, 85, 80, 75, 70, 65, 60, 55, 50, 45, 40, 35, 30, 25, 0];
+    [41, 36, 30, 25, 21, 19, 17, 15, 13, 11, 9, 7, 5, 3, 1, -2, -5, -10, -15, -22, -80];
     for (let i = 0; i < temps.length; i++) {
         if (t >= temps[i]) {
             return `t${i}`;
         }
     }
-    return 't14';
+    return 't20';
 }

@@ -19,6 +19,11 @@
     gap: 8px;
 }
 
+.location-container {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
 .temperature-container {
     display: flex;
     align-items: center;
@@ -34,62 +39,86 @@
     height: 16px;
 }
 
+#temperature-color.t20 {
+    background-color: #1D469A;
+}
+
+#temperature-color.t19 {
+    background-color: #1362A9;
+}
+
+#temperature-color.t18 {
+    background-color: #1675B6;
+}
+
+#temperature-color.t17 {
+    background-color: #378AC7;
+}
+
+#temperature-color.t16 {
+    background-color: #3FA3DA;
+}
+
+#temperature-color.t15 {
+    background-color: #4DC0EE;
+}
+
 #temperature-color.t14 {
-    background-color: hsl(224, 34%, 31%);
+    background-color: #AFDCD8;
 }
 
 #temperature-color.t13 {
-    background-color: hsl(215, 55%, 48%);
+    background-color: #A9D6AE;
 }
 
 #temperature-color.t12 {
-    background-color: hsl(209, 71%, 55%);
+    background-color: #9FD07F;
 }
 
 #temperature-color.t11 {
-    background-color: hsl(203, 75%, 68%);
+    background-color: #AFD353;
 }
 
 #temperature-color.t10 {
-    background-color: hsl(205, 46%, 90%);
+    background-color: #D0D93D;
 }
 
 #temperature-color.t9 {
-    background-color: hsl(90, 39%, 83%);
+    background-color: #FCDE02;
 }
 
 #temperature-color.t8 {
-    background-color: hsl(160, 43%, 69%);
+    background-color: #FBCB0B;
 }
 
 #temperature-color.t7 {
-    background-color: hsl(185, 60%, 40%);
+    background-color: #FCB714;
 }
 
 #temperature-color.t6 {
-    background-color: hsl(83, 59%, 43%);
+    background-color: #FAA31B;
 }
 
 #temperature-color.t5 {
-    background-color: hsl(51, 89%, 50%);
+    background-color: #F68A1E;
 }
 
 #temperature-color.t4 {
-    background-color: hsl(29, 83%, 58%);
+    background-color: #F26A2F;
 }
 
 #temperature-color.t3 {
-    background-color: hsl(4, 66%, 56%);
+    background-color: #EC513A;
 }
 
 #temperature-color.t2 {
-    background-color: hsl(358, 51%, 46%);
+    background-color: #ED2B29;
 }
 
 #temperature-color.t1 {
-    background-color: hsl(350, 59%, 52%);
+    background-color: #C32028;
 }
 
 #temperature-color.t0 {
-    background-color: hsl(335, 61%, 54%);
+    background-color: #9B1B1D;
 }
