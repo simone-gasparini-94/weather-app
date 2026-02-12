@@ -50,8 +50,8 @@ export function displayLocation(location) {
 }
 
 
-export function displayError() {
+export function displayError(err) {
     dom.container.classList.add("hidden");
     dom.error.classList.remove("hidden");
-    dom.error.textContent = "Location not found";
+    dom.error.textContent = err;
 }
