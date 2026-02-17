@@ -18,4 +18,4 @@ At the current state, the backend does not modify any data.
 
 https://simone-gasparini-94.github.io/weather-app/
 
-*Note: the server is hosted on the free version of [Render](), which means that requests can be delayed by 50 seconds or more when inactive.*
+*Note: the server is hosted on the free version of [Render](https://render.com/), which means that requests can be delayed by 50 seconds or more when inactive.*
