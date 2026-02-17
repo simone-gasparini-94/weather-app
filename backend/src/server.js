@@ -9,11 +9,13 @@ const server = http.createServer(async (req, res) => {
     const url = baseURL + req.url + `?key=${process.env.KEY}`;
     const apiRes = await fetch(url);
     if (!apiRes.ok) {
+        const errorText = await apiRes.text();
+        console.log(errorText);
         res.writeHead(apiRes.status, {
             'Content-Type': 'application/json',
             'Access-Control-Allow-Origin': '*'
         });
-        res.end(JSON.stringify({ error: 'API request failed'}));
+        res.end(JSON.stringify({ error: errorText}));
         return ;
     } 
     const data = await apiRes.json();
