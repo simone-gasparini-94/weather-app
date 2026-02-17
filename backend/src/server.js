@@ -2,7 +2,7 @@ import http from 'http';
 import dotenv from 'dotenv';
 
 dotenv.config();
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 const baseURL = 'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline';
 
 const server = http.createServer(async (req, res) => {
