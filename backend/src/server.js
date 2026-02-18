@@ -10,7 +10,6 @@ const server = http.createServer(async (req, res) => {
     const apiRes = await fetch(url);
     if (!apiRes.ok) {
         const errorText = await apiRes.text();
-        console.log(errorText);
         res.writeHead(apiRes.status, {
             'Content-Type': 'application/json',
             'Access-Control-Allow-Origin': '*'
