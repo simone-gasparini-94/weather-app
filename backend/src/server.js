@@ -6,24 +6,31 @@ const PORT = process.env.PORT || 4000;
 const baseURL = 'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline';
 
 const server = http.createServer(async (req, res) => {
-    const url = baseURL + req.url + `?key=${process.env.KEY}`;
-    const apiRes = await fetch(url);
-    if (!apiRes.ok) {
-        const errorText = await apiRes.text();
-        res.writeHead(apiRes.status, {
+    if (req.method === 'GET') {
+        const url = `${baseURL}${req.url}?key=${process.env.KEY}`;
+        const apiRes = await fetch(url);
+        if (!apiRes.ok) {
+            const errorText = await apiRes.text();
+            res.writeHead(apiRes.status, {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
+            });
+            res.end(JSON.stringify({ error: errorText}));
+            return ;
+        } 
+        const data = await apiRes.json();
+        res.writeHead(200, {
             'Content-Type': 'application/json',
             'Access-Control-Allow-Origin': '*'
         });
-        res.end(JSON.stringify({ error: errorText}));
+        res.end(JSON.stringify(data));
         return ;
-    } 
-    const data = await apiRes.json();
-    console.log(data);
-    res.writeHead(200, {
+    }
+    res.writeHead(404, {
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*'
     });
-    res.end(JSON.stringify(data));
+    res.end(JSON.stringify({ error: 'Not Found'}));
 });
 
 server.listen(PORT, () => {
