@@ -2,15 +2,13 @@
 
 # Weather App
 
-*WORK IN PROGRESS*
-
 ![Screenshot](./assets/screenshot.png)
 
 ## Description
 
 Web app that uses [Virtual Crossing Weather API](https://www.visualcrossing.com/weather-api/) to fetch the weather forecast of a specific location.
 
-The app uses a backend server that hides the API key and acts as proxy, forwarding the HTTP request from the frontend to the public API and returning the results.
+The app uses a backend server that hides the API key and acts as reverse proxy.
 
 At the current state, the backend does not modify any data.
 
@@ -18,4 +16,4 @@ At the current state, the backend does not modify any data.
 
 https://simone-gasparini-94.github.io/weather-app/
 
-*Note: the server is hosted on the free version of [Render](https://render.com/), which means that requests can be delayed by 50 seconds or more when inactive.*
+*Note: the backend is hosted on the free version of [Render](https://render.com/), which means that requests can be delayed by 50 seconds or more when inactive.*
